@@ -1,0 +1,26 @@
+#To create the table
+create 'Twitter','Followers','Following'
+
+#To allow a lot of versions in every column family
+alter 'Twitter',{NAME=>'Followers',VERSIONS=>'2147483647'}
+alter 'Twitter',{NAME=>'Following',VERSIONS=>'2147483647'}
+
+#To make insertions
+put 'Twitter','usr1','Followers:1','usr2'
+put 'Twitter','usr1','Followers:2','usr3'
+put 'Twitter','usr1','Followers:3','usr4'
+put 'Twitter','usr1','Followers:4','usr5'
+put 'Twitter','usr1','Followers:5','usr6'
+put 'Twitter','usr2','Followers:1','usr7'
+put 'Twitter','usr2','Followers:2','usr8'
+put 'Twitter','usr2','Followers:3','usr9'
+put 'Twitter','usr2','Followers:4','usr10'
+put 'Twitter','usr3','Followers:1','usr1'
+put 'Twitter','usr3','Followers:2','usr2'
+put 'Twitter','usr1','Following:1','usr3'
+put 'Twitter','usr1','Following:2','usr5'
+put 'Twitter','usr1','Following:3','usr10'
+put 'Twitter','usr2','Following:1','usr3'
+put 'Twitter','usr2','Following:2','usr4'
+put 'Twitter','usr2','Following:3','usr5'
+put 'Twitter','usr2','Following:4,'usr6'
